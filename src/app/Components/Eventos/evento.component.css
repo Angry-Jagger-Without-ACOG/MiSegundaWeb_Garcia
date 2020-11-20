@@ -1,0 +1,32 @@
+#alta{
+  display: block;
+  height: 125px;
+  width: 250px;
+  background-color: orange;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+  padding-top: 12px;
+  text-align: center;
+}
+button {
+  border-radius: 5px;
+}
+.card-text{
+text-align: center;
+}
+
+#Item{
+  padding-bottom: 25px;
+  border-radius: 10px;
+}
+
+#Index{
+  display: none;
+}
+
+#Nada{
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 100px;
+}

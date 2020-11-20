@@ -1,0 +1,14 @@
+<!--ng If para mostrar la tarjeta con el miembro del equipo selecionado-->
+<div *ngIf="PersonaSelecionada !== null" class="card float-right" style="width: 25rem;">
+
+    <div class="card-body">
+      <h4 class="card-title">{{PersonaSelecionada.Nombre}} {{PersonaSelecionada.Apellido}}</h4>
+      <p class="card-text">Algun tipo de Informacion</p>
+      <button type="button" class="btn btn-dark "  (click)="Volver()">Atras</button>
+    </div>
+
+    <div class="card-img-bottom" alt="Card image" style="width:100%; background-color: orange;">
+      <img  src="{{PersonaSelecionada.Img}}">
+    </div>
+
+</div>

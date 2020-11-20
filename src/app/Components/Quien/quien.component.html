@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="row mt-4">
+
+    <div class="col-4 align-middl" style="margin-top: 70px;">
+
+      <div class="list-group rounded">
+        <!--Bucle encargado para mostrar al equipo y con la funcion
+          encargada de recoger que miembro del equipo hemos selecionado-->
+        <a *ngFor="let persona of Equipo" class="list-group-item list-group-item-action"
+          (click)="Get(persona)">{{persona.Nombre}} {{persona.Apellido}}</a>
+      </div>
+
+      <br>
+
+    </div>
+
+    <div class="col-8">
+  <!--ng If para mostrar la tarjeta con el miembro del equipo, y de pasar que miembro del equipo que
+  mostraremos si hay persona-->
+      <div *ngIf="Persona != null">
+        <app-perfil [PersonaSelecionada]="Persona" (Atras)="Get($event)"></app-perfil>
+      </div>
+
+      <div *ngIf="Persona === null" style="margin-top: 100px;margin-left: 275px;">
+        <img src="assets/img/logo.png">
+      </div>
+    </div>
+
+  </div>
+</div>

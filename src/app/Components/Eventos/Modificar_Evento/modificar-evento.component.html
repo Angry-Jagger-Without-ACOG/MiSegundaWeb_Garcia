@@ -1,0 +1,31 @@
+<div class="container">
+  <form>
+
+    <legend>Modificacion de Eventos</legend>
+
+    <div class="form-group">
+      <p>Nombre del Evento</p>
+      <input type="text" #vNombre value="{{EventoEntrada.Nombre}}">
+    </div>
+
+    <div class="form-group">
+      <p>Localizacion </p>
+      <input type="text" #vLocalizacion value="{{EventoEntrada.Localizacion}}">
+    </div>
+
+    <div class="form-group">
+      <p>Correo </p>
+      <input type="text" #vCorreo value="{{EventoEntrada.Correo}}">
+    </div>
+
+    <div class="form-group">
+      <p>Descripcion </p>
+      <textarea rows="8" cols="35" #vInfo value="{{EventoEntrada.Info}}"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button (click)="Modificar(vNombre.value,vLocalizacion.value,vCorreo.value,vInfo.value)">Guardar Cambios</button>
+    </div>
+
+  </form>
+</div>

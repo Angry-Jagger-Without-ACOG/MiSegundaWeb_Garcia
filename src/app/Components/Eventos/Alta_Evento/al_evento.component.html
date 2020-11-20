@@ -1,0 +1,34 @@
+<div class="container">
+  <form>
+    <legend>Alta de Eventos</legend>
+
+    <div class="form-group">
+      <p>Nombre</p>
+      <input type="text" #vNombre>
+    </div>
+
+    <div class="form-group">
+      <p>Localizacion </p>
+      <input type="text" #vLocal>
+    </div>
+
+    <div class="form-group">
+      <p>Correo </p>
+      <input type="text" #vCorreo>
+    </div>
+
+    <div class="form-group">
+      <p>Descripcio</p>
+      <textarea rows="8" cols="35" #vInfo></textarea>
+    </div>
+
+    <div class="form-inline">
+      <input type="checkbox" class="mb-2 mr-sm-2" #vOk>
+      <p class="mb-2 mr-sm-2">Informacion Confirmada</p>
+    </div>
+
+    <button type="button" class="mb-2 mr-sm-2" (click)="Crear(vNombre,vLocal,vCorreo,vInfo,vOk)">Crear</button>
+    <button type="button" class="mb-2 mr-sm-2" (click)="Volver()">Volver</button>
+
+  </form>
+</div>

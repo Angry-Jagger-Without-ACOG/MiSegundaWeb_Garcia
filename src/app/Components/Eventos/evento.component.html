@@ -1,0 +1,47 @@
+<div class="container-fluid mt-4">
+
+  <!--ngif encargado de mostrar la ventana para dar de alta eventos-->
+  <div *ngIf="Opcion === 'Alta'">
+    <app-alta (insert)="CambioOp($event)"></app-alta>
+  </div>
+
+  <!--ngif encargado de mostrar la ventana para de modificar eventos-->
+  <div *ngIf="Opcion === 'Mod'">
+    <app-modificar [EventoEntrada]="EvenMod" (modif)="CambioOp($event)"></app-modificar> <!-- -->
+  </div>
+
+  <!--ngif encargado de mostrar la opcion que esta predeterminda que muestra los eventos y la opcion de crear-los-->
+  <div *ngIf="Opcion === 'Eventos'">
+
+    <!-- Boton para ir a la opcion de dar de alta -->
+    <div id="alta" class="mb-5">
+      <p>Haz click para dar un evento de alta</p>
+      <button (click)="CambioOp('Alta')">Crear</button>
+    </div>
+
+    <!-- Encargado de mostrar un mensaje en caso de que no haya eventos-->
+    <div *ngIf="EventList.length ===0">
+      <p id="Nada">No hay eventos disponibles</p>
+    </div>
+
+    <div class="pre-scrollable" style="width: 23rem;">
+      <!-- ngfor encargado de mostra la lista de eventos y de sus opciones-->
+      <div *ngFor="let event of EventList;index as i" class="col" id="Item">
+        <div class="card" style="width: 20rem;">
+
+          <div id="Index">
+            {{i+1}}
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">{{event.Nombre}} - {{event.Localizacion}}</p>
+          </div>
+
+          <button (click)="Get(this.event)" (click)="CambioOp('Mod')">Modificar</button>
+          <button (click)="Eliminar(i)">Eliminar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
